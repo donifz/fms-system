@@ -1,0 +1,66 @@
+.charts__wrapper h1{
+    margin-left: 25px;
+}
+.type_charts{
+    
+    display: flex;
+    justify-content: center;
+}
+.charts__wrapper .chart-filter__wrapper form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.diagram__body{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  padding: 20px;
+}
+
+.bank__diagram{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    flex-direction: column;
+
+}
+
+
+.charts__wrapper .chart-filter__wrapper{
+ margin: 24px;
+ height: 100px;
+ background-color: #fff;
+ border-radius: 6px ;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ padding: 5px 10px;
+ display: flex;
+ flex-direction: column;
+}
+
+.charts__wrapper .chart-filter__wrapper input{
+    font-family: "Exo 2", sans-serif;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin: 10px;
+    font-size: 20px;
+
+}
+.charts__wrapper .chart-filter__wrapper label{
+    display: flex;
+    
+    align-items: center;
+    margin-right: 20px;
+}
+.charts__wrapper .chart-filter__wrapper .date-input{
+ display: flex;
+}
+@media(max-width:750px){
+    .charts__wrapper .chart-filter__wrapper{
+        height: 150px;
+    }
+}

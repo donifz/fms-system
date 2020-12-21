@@ -1,0 +1,88 @@
+.expenses{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+}
+.expenses .income__wrapper{
+    width: 600px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+    border-radius: 8px;
+    background-color: white;
+}
+.expenses .income__header{
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+    
+    
+}
+.expenses .income__header span{
+    
+    padding-top: 5px;
+    cursor: pointer;
+    color: #D3D8DD;
+   
+}
+.expenses .income__title{
+    font-size: 26px;
+    flex-grow: 1;
+    
+    padding-right: 10px;
+    color: #f7685b;
+}
+.expenses .income__body{
+    padding: 15px;
+}
+.expenses form{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.expenses input{
+    font-size: 16px;
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+}
+.expenses input:focus{
+    border-bottom: 2px solid #992ada;
+}
+
+.expenses select{
+    font-size: 16px;
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+}
+.expenses select:focus{
+    border-bottom: 1px solid #992ada;
+}
+.expenses form .income__submit{
+    width:auto;
+    
+    background-color: #2ed47a;
+}
+@media (max-width:650px){
+    .expenses .income__wrapper{
+        width: 320px;
+    }
+    .expenses form{
+        flex-direction: column;
+    }
+}

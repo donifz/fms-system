@@ -1,0 +1,149 @@
+.main-filter {
+  /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); */
+  margin-top: 14px;
+  border-radius: 6px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  background-color: white;
+
+  /* margin-right: 24px;
+    margin-left: 24px; */
+}
+.main-filter form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.main-filter form input {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #90a0b7;
+  font-family: "Exo 2", sans-serif;
+}
+.main-filter form input:focus {
+  border-bottom: 2px solid #992ada;
+  outline: none;
+}
+.main-filter form select {
+  width: 150px;
+  font-family: "Exo 2", sans-serif;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #90a0b7;
+}
+.main-filter form select:focus {
+  border-bottom: 2px solid #992ada;
+  outline: none;
+}
+.main-filter .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.main-filter .filter__btn {
+  background-color: #36a2eb;
+}
+.main-filter .excel__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: seagreen !important;
+  cursor: pointer;
+  height: 30px;
+}
+@media (max-width: 750px) {
+  .main-filter {
+    height: 100%;
+    padding: 15px;
+  }
+  .main-filter form {
+    flex-wrap: wrap;
+  }
+  .main-filter form > input[type="date"] {
+    width: 150px !important;
+  }
+  .main-filter form input {
+    margin-top: 5px;
+  }
+  .main-filter form input[type="submit"] {
+  }
+  .excel__btn {
+    margin-top: 5px;
+  }
+  .main-filter form input[type="submit"] {
+    width: 60px;
+    font-size: 14px;
+  }
+  .main-filter form .buttons > a {
+    width: 60px;
+    font-size: 14px;
+  }
+  .main-filter form .buttons {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 410px) {
+  .main-filter form > input[type="date"] {
+    width: 140px !important;
+  }
+  .main-filter form input {
+    width: 140px;
+  }
+  .main-filter form select {
+    width: 140px;
+  }
+  .main-filter form .buttons {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-filter form input[type="submit"] {
+    width: 60px;
+    font-size: 14px;
+  }
+  .main-filter form .buttons > a {
+    width: 60px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .main-filter form > input[type="date"] {
+    width: 110px !important;
+  }
+  .main-filter form input {
+    width: 110px;
+  }
+  .main-filter form select {
+    width: 110px;
+  }
+  .main-filter form .buttons {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-filter form input[type="submit"] {
+    width: 50px;
+    font-size: 13px;
+  }
+  .main-filter form .buttons > a {
+    width: 50px;
+    font-size: 13px;
+  }
+}
+.MuiAccordion-rounded:last-child {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.MuiAccordion-root.Mui-expanded:last-child {
+  margin-left: 24px;
+  margin-right: 24px;
+}

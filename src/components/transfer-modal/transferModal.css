@@ -1,0 +1,90 @@
+.transfer{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3)
+  
+}
+.transfer .income__wrapper{
+  
+  
+  border-radius: 8px;
+  background-color: white;
+}
+.transfer .income__header{
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+  
+}
+.transfer .income__header span{
+  cursor: pointer;
+  color: #D3D8DD;
+  
+ 
+}
+.transfer .income__title{
+  text-align: center;
+  font-size: 26px;
+  padding-right: 10px;
+  color: #ffb946;
+  flex-grow: 1;
+  
+}
+.transfer .income__body{
+  padding: 15px;
+}
+.transfer form{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.transfer input{
+  width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+    font-size: 16px;
+}
+.transfer input:focus{
+  border-bottom: 2px solid #992ada;
+}
+
+.transfer select{
+  font-size: 16px;
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+}
+.transfer select:focus{
+  border-bottom: 1px solid #992ada;
+}
+.transfer form .income__submit{
+  margin-left: auto;
+  width:auto;
+  text-align: right;
+  
+  background-color: #2ed47a;
+}
+@media (max-width:650px){
+  .transfer .income__wrapper{
+      width: 320px;
+  }
+  .transfer form{
+      flex-direction: column;
+  }
+}

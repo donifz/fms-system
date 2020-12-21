@@ -1,0 +1,110 @@
+
+.create-user{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+    
+    
+}
+.create-user .income__wrapper{
+    width: 600px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+    border-radius: 8px;
+    background-color: white;
+    
+    
+}
+.create-user .income__header{
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+    
+    
+}
+.create-user .income__header span{
+    padding-top: 5px;
+    cursor: pointer;
+    color: #D3D8DD;
+   
+}
+.create-user .income__title{
+    font-size: 26px;
+    flex-grow: 1;
+    color: #2ed47a;
+}
+.create-user .income__body{
+    padding: 15px;
+    padding-bottom: 20px;
+}
+.create-user form{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 50px;
+}
+.create-user input{
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+    font-size: 16px;
+    
+}
+.create-user input:focus{
+    border-bottom: 2px solid #992ada;
+}
+
+.create-user select{
+    font-size: 16px;
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+    
+}
+.create-user select:focus{
+    border-bottom: 1px solid #992ada;
+}
+.create-user form .income__submit{
+    display: flex;
+    width:auto;
+    justify-self: center;
+    background-color: #2ed47a;
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+    padding: 0 10px 10px 10px;
+}
+
+@media (max-width:650px){
+    .create-user .income__wrapper{
+        width: 320px;
+    }
+    .create-user form{
+        flex-direction: column;
+    }
+    .create-user form .income__submit{
+        /* display: inline-block; */
+        width:100px !important;
+        
+        background-color: #2ed47a;
+    right: 80px;
+        
+        
+        
+    }
+}

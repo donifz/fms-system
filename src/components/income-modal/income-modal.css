@@ -1,0 +1,93 @@
+
+.income{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+    
+    
+}
+.income__wrapper{
+    width: 600px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+    border-radius: 8px;
+    background-color: white;
+    
+    
+}
+.income .income__header{
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+    
+    
+}
+.income .income__header span{
+    padding-top: 5px;
+    cursor: pointer;
+    color: #D3D8DD;
+   
+}
+.income .income__title{
+    font-size: 26px;
+    flex-grow: 1;
+    color: #2ed47a;
+}
+.income .income__body{
+    padding: 15px;
+}
+.income form{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.income input{
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+    font-size: 16px;
+    
+}
+.income input:focus{
+    border-bottom: 2px solid #992ada;
+}
+
+.income select{
+    font-size: 16px;
+    width: 250px;
+    font-family: var(--main-font);
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #D3D8DD;
+    outline: none;
+    margin: 15px;
+    
+}
+.income select:focus{
+    border-bottom: 1px solid #992ada;
+}
+.income form .income__submit{
+    width:auto;
+    
+    background-color: #2ed47a;
+}
+
+@media (max-width:650px){
+    .income .income__wrapper{
+        width: 320px;
+    }
+    .income form{
+        flex-direction: column;
+    }
+}
