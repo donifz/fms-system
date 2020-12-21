@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/fms-system/static/css/main.02fad154.chunk.css",
+    "main.js": "/fms-system/static/js/main.067eb5b7.chunk.js",
+    "main.js.map": "/fms-system/static/js/main.067eb5b7.chunk.js.map",
+    "runtime-main.js": "/fms-system/static/js/runtime-main.cd9df629.js",
+    "runtime-main.js.map": "/fms-system/static/js/runtime-main.cd9df629.js.map",
+    "static/js/2.4ef5ac82.chunk.js": "/fms-system/static/js/2.4ef5ac82.chunk.js",
+    "static/js/2.4ef5ac82.chunk.js.map": "/fms-system/static/js/2.4ef5ac82.chunk.js.map",
+    "index.html": "/fms-system/index.html",
+    "static/css/main.02fad154.chunk.css.map": "/fms-system/static/css/main.02fad154.chunk.css.map",
+    "static/js/2.4ef5ac82.chunk.js.LICENSE.txt": "/fms-system/static/js/2.4ef5ac82.chunk.js.LICENSE.txt",
+    "static/media/Sanira.2f09af3c.jpg": "/fms-system/static/media/Sanira.2f09af3c.jpg",
+    "static/media/loader5.175814d0.gif": "/fms-system/static/media/loader5.175814d0.gif",
+    "static/media/settings.202c8bb7.png": "/fms-system/static/media/settings.202c8bb7.png",
+    "static/media/tasks.30e2721c.svg": "/fms-system/static/media/tasks.30e2721c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cd9df629.js",
+    "static/js/2.4ef5ac82.chunk.js",
+    "static/css/main.02fad154.chunk.css",
+    "static/js/main.067eb5b7.chunk.js"
+  ]
+}
