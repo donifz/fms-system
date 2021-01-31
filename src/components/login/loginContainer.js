@@ -10,10 +10,10 @@ import Login from "./login"
 class LoginContainer extends Component {
 
 
-    componentDidMount() {
-        this.props.actions.settingsData()
+    // componentDidMount() {
+    //     this.props.actions.settingsData()
 
-    }
+    // }
 
 
 
