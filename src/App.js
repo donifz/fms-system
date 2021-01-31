@@ -77,8 +77,8 @@ function App(props) {
       modalTransfer={modalTransfer} />
 
       <div className="content"> 
-        
-        <Route exact  path='/' render={() => <MainPageContainer />} />
+      <Route exact  path='/' render={() => <MainPageContainer />} />
+        <Route exact  path='/fms-system' render={() => <MainPageContainer />} />
         <Route exact path='/settings' render={() => <SettingsContainer />} />
         <Route exact  path='/diagrams' render={() => <ChartsContainer />} />
         <Route exact  path='/profile' render={() => <ProfileContainer modalCreateUser={modalCreateUser}/>} />
