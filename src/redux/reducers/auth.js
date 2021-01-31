@@ -15,8 +15,8 @@ const initialState = {
       case 'ENTERTOAPP':
         
       let toke = action.payload===JSON.parse( window.localStorage.getItem('token'))
-      console.log(toke)
-      console.log(JSON.parse( window.localStorage.getItem('token')))
+      // console.log(toke)
+      // console.log(JSON.parse( window.localStorage.getItem('token')))
       return {...state, entry: false}
 
       case 'LOGOUT':

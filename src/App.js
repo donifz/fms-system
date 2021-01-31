@@ -48,14 +48,14 @@ function App(props) {
 
 
 
-const [auth] = React.useState(!!window.localStorage.getItem('token'))
+// const [auth] = React.useState(!!window.localStorage.getItem('token'))
 
-  console.log(auth)
+  // console.log(auth)
 
     let state = useSelector(state => state.authReducer.entry)
       
     
-  console.log(state)
+ 
 
   
     
