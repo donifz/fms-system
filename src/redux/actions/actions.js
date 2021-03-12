@@ -766,6 +766,7 @@ export const login = ({email,password})=>{
         API.login(`token/login/`,valid).then(token=>{
             console.log(token)
             localStorage.setItem('token', JSON.stringify(token.data.auth_token));
+            history.push('/')
             window.location.reload(true) 
             dispatch(enterToApp(token.data.auth_token))
         })
