@@ -1,4 +1,5 @@
 import API from "../../API/API"
+import { history } from "../../helpers/_history";
 export const getBanks = (banks) => {
     return {
         type: "GETBANKS",
@@ -766,7 +767,7 @@ export const login = ({email,password})=>{
         API.login(`token/login/`,valid).then(token=>{
             console.log(token)
             localStorage.setItem('token', JSON.stringify(token.data.auth_token));
-            history.push('/')
+             history.push('/')
             window.location.reload(true) 
             dispatch(enterToApp(token.data.auth_token))
         })
