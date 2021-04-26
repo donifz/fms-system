@@ -46,7 +46,7 @@ const Header = (props) => {
                     <div className="admin">
                         <div className="admin__icon"><Avatar src="/broken-image.jpg" /></div>
                         <div className="admin__text">
-                            <p className="admin__name">{props.getMe.first_name+" "+props.getMe.last_name}</p>
+                            <p className="admin__name">{props.getMe.first_name + " " + props.getMe.last_name}</p>
                             <p className="admin__mail">{props.getMe.email}</p>
                         </div>
                     </div>
@@ -62,10 +62,11 @@ const Header = (props) => {
                     </nav>
                     <nav className="main-nav">
                         <ul className="sidebar__nav">
+                            <li className="sidebar__nav-list"><Link to={"/"}><h3>Главная</h3></Link></li>
                             <li className="sidebar__nav-list"><Link to={"/diagrams"}><h3>Аналитика</h3></Link></li>
                             <li className="sidebar__nav-list"><Link to={"/profile"}><h3>Профиль</h3></Link></li>
                             <li className="sidebar__nav-list"><Link to={"/archive"}><h3>Архив</h3></Link></li>
-                            <li className="sidebar__nav-list" style={{cursor:"pointer"}} onClick={()=>props.logout()}><h3>Выход</h3></li>
+                            <li className="sidebar__nav-list" style={{ cursor: "pointer" }} onClick={() => props.logout()}><h3>Выход</h3></li>
 
                         </ul>
                     </nav>
