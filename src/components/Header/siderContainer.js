@@ -14,23 +14,12 @@ class SiderContainer extends Component {
     componentDidMount() {
         this.props.actions.getBanksThunk()
     }
-
-
     render() {
-
-        console.log(this.props)
-
         return (
             <>{this.props.isFetching ? <Header modalIncome={this.props.modalIncome} modalExpenses={this.props.modalExpenses} modalTransfer={this.props.modalTransfer} bankList={this.props.settingBankState } logout={this.props.actions.logout}  getMe={this.props.getMe}/> : null}
                 <Header modalIncome={this.props.modalIncome} modalExpenses={this.props.modalExpenses} modalTransfer={this.props.modalTransfer} bankList={this.props.settingBankState} logout={this.props.actions.logout} getMe={this.props.getMe}/></>
-
-
         )
-
-
     }
-
-
 }
 const mapStateToProps = (state) => {
     return {

@@ -1,9 +1,7 @@
 import React, { Component } from "react"
-
 import { connect } from "react-redux"
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions/actions'
-
 import ContractorModal from "./contractorModal"
 import CategoryExpensesModal from "./categoryExpensesModal"
 import CategoryIncomeModal from "./categoryIncomeModal"

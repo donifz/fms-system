@@ -52,12 +52,6 @@ function settingsReducer(state = initialState, action) {
         
 
         case 'GETJURNAL':
-            console.log(action.payload)
-            
-        
-            
-            console.log(action.payload)
-
             return { ...state, jurnal: [...action.payload] }
 
         case 'ISFETCHING':
@@ -80,7 +74,7 @@ function settingsReducer(state = initialState, action) {
             }
             bankState.banks = [...state.banks, { "id": action.payload.id, "name_bank": action.payload.name_bank, "balance": action.payload.balance }]
             bankState.text = ""
-            console.log(state.text)
+
             return { ...state, banks: [...state.banks, { "id": action.payload.id, "name_bank": action.payload.name_bank, "balance": action.payload.balance }], text: '' }
         case 'DELETEBANK':
             let newArr = state.banks.filter(item => item.id !== action.payload)
@@ -147,13 +141,6 @@ function settingsReducer(state = initialState, action) {
             return { ...state, jurnal: [action.payload, ...srortedJurnal] }
         
         case 'UPDATEPAGE':
-            // console.log(action.payload)
-            //     let srortedPage = action.payload.sort(function (a, b) {
-            //         a = new Date(a.date);
-            //         b = new Date(b.date);
-                    
-            //         return a >= b ? -1 : a <= b ? 1 : 0;
-            //     });
                 
                 return { ...state, jurnal: [ ...action.payload] }
 
@@ -167,7 +154,7 @@ function settingsReducer(state = initialState, action) {
             
             let pages = !action.payload.count?0 : Math.ceil(action.payload.count/12)
             for(let i=1;i<pages+1; i++) pagesNum.push(i)
-            console.log(pagesNum)
+
             return {...state, paginationPages:pagesNum}
         
         case 'CURENTPAGE':
@@ -202,7 +189,7 @@ function settingsReducer(state = initialState, action) {
 
         case 'SELECTTYPE':
 
-            console.log(action.payload)
+
             return { ...state, category: {...action.payload} }
         
 

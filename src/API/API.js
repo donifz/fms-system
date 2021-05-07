@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-let head =window.localStorage.getItem('token')? {Authorization:`Token ${JSON.parse( window.localStorage.getItem('token'))}`} :null
+let head =window.localStorage.getItem('token')? {Authorization:`Token ${JSON.parse(localStorage.getItem("token"))}`} :""
 
 
 

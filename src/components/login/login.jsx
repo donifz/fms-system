@@ -4,9 +4,6 @@ import brand from "../assets/favicon3.png";
 
 const Login = (props) => {
 
-    let [email, setEmail] = React.useState("")
-
-    let [password, setPassword] = React.useState("")
 
     let [allData, setAllData] = React.useState()
 

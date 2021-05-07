@@ -1,4 +1,4 @@
-import React, { createRef, useRef } from 'react';
+import React from 'react';
 import "./settings.css"
 import deleteIcone from '../assets/icons/delete.png'
 import archiveIcon from '../assets/icons/folder.png'
@@ -56,7 +56,7 @@ const Settings = (props) => {
         setProject("")
     }
 
- 
+
 
 
 
@@ -64,7 +64,7 @@ const Settings = (props) => {
 
         < div className="settings" >
             <div className="settings__wrapper">
-                
+
                 <h1 className="settings__title">Настройки</h1>
                 <div className="settings__body">
 
@@ -72,12 +72,12 @@ const Settings = (props) => {
                         <h2 className="account__title">Счет</h2>
                         <ul className="account__list">
                             {props.banks.map(item => {
-                                return <li key={item.id}>{item.name_bank} 
-                                <span className="deleteStng" > 
-                                
-                                
-                                <img  src={archiveIcon} onClick={()=>props.modalToggle(item.id)} alt="delete icon"/> </span>  </li>
-                                
+                                return <li key={item.id}>{item.name_bank}
+                                    <span className="deleteStng" >
+
+
+                                        <img src={archiveIcon} onClick={() => props.modalToggle(item.id)} alt="delete icon" /> </span>  </li>
+
                             })}
 
 
@@ -90,7 +90,7 @@ const Settings = (props) => {
                         <h2 className="category-income__title">Категория дохода</h2>
                         <ul className="category-income__list">
                             {props.income.map(item => {
-                                return <li key={item.id}>{item.name} <span className="deleteStng" onClick={() => props.categoryIncomeToggle(item.id)}><img  src={deleteIcone}/></span></li>
+                                return <li key={item.id}>{item.name} <span className="deleteStng" onClick={() => props.categoryIncomeToggle(item.id)}><img src={deleteIcone} /></span></li>
                             })}
                             <li className="addList"><input placeholder="Добавить" value={incomeInput} onChange={incomeHandle} type="text" />
                                 <div onClick={addIncome}><AddCircleIcon /></div></li>
@@ -101,7 +101,7 @@ const Settings = (props) => {
                         <h2 className="category-expenses__title">Категория расхода</h2>
                         <ul className="category-expenses__list">
                             {props.expenses.map(item => {
-                                return <li key={item.id}>{item.name} <span className="deleteStng" onClick={() => props.categoryExpensesToggle(item.id)}><img  src={deleteIcone}/></span></li>
+                                return <li key={item.id}>{item.name} <span className="deleteStng" onClick={() => props.categoryExpensesToggle(item.id)}><img src={deleteIcone} /></span></li>
                             })}
                             <li className="addList"><input value={expensesInput} placeholder="Добавить" onChange={expensesHandle} type="text" />
                                 <div onClick={addExpenses}><AddCircleIcon /></div></li>
@@ -111,7 +111,7 @@ const Settings = (props) => {
                         <h2 className="contragent__title">Контрагенты</h2>
                         <ul className="contragent__list">
                             {props.contragents.map(item => {
-                                return <li key={item.id}>{item.name}<span className="deleteStng" onClick={() => props.contractorToggle(item.id)}><img  src={deleteIcone}/></span></li>
+                                return <li key={item.id}>{item.name}<span className="deleteStng" onClick={() => props.contractorToggle(item.id)}><img src={deleteIcone} /></span></li>
                             })}
                             <li className="addList"><input placeholder="Добавить" value={contr} onChange={contrHandle} type="text" />
                                 <div onClick={addContr}><AddCircleIcon /></div></li>
@@ -122,7 +122,7 @@ const Settings = (props) => {
                         <h2 className="projects__title">Проекты</h2>
                         <ul className="projects__list">
                             {props.projects.map(item => {
-                                return <li key={item.id}>{item.name}<span className="deleteStng" ><img onClick={()=>props.projectToArhive(item.id)}  src={archiveIcon}/><img onClick={() => props.projectToggle(item.id)}  src={deleteIcone}/></span></li>
+                                return <li key={item.id}>{item.name}<span className="deleteStng" ><img onClick={() => props.projectToArhive(item.id)} src={archiveIcon} /><img onClick={() => props.projectToggle(item.id)} src={deleteIcone} /></span></li>
                             })}
                             <li className="addList"><input placeholder="Добавить" value={project} onChange={projectHandle} type="text" />
                                 <div onClick={addProject}><AddCircleIcon /></div></li>
@@ -133,7 +133,7 @@ const Settings = (props) => {
                 </div>
             </div>
         </div >
-        </>
+    </>
     )
 }
 export default Settings

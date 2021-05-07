@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./main-page.css";
 import ReactTooltip from "react-tooltip";
 import incomeIcone from "../assets/icons/income.png";
 import expenseIcone from "../assets/icons/expense.png";
 import transferIcon from "../assets/icons/transfer.png";
-import loader from "../assets/loader5.gif";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -25,23 +24,20 @@ const MainPage = (props) => {
   const handleClose = (id) => {
     console.log(id);
     setOpenedElId(null)
-    if(typeof id == "object"){
-      
-    setAnchorEl(null);
-    }else{
+    if (typeof id == "object") {
+
+      setAnchorEl(null);
+    } else {
       props.transactionDelete(id)
       setAnchorEl(null);
     }
-    // props.transactionDelete(id)
-    
   };
   const handleDel = (id) => () => {
-    console.log(id);
-    // transactionDelete
+    console.log(id)
     setAnchorEl(null);
   };
 
-  console.log(props.jurnal);
+
   const incomText = () => {
     return (
       <span className="incomText">
@@ -84,48 +80,43 @@ const MainPage = (props) => {
 
 
 
-  let typesIncome = props.jurnal.reduce((start, cure,i, arr)=>{
-    let newObj = props.projects.map(item=>{
-      
-      let categ =  arr.reduce((st,en)=>{
-        if(item.name===en.specific_project.name){
-         return st +en.sum
+  let typesIncome = props.jurnal.reduce((start, cure, i, arr) => {
+    let newObj = props.projects.map(item => {
+
+      let categ = arr.reduce((st, en) => {
+        if (item.name === en.specific_project.name) {
+          return st + en.sum
         }
         return st
-        },0)
-        return{
-          type:item.name,
-          value:categ
-        }
-      
-      
-    
+      }, 0)
+      return {
+        type: item.name,
+        value: categ
+      }
+
+
+
     })
 
     return [...newObj]
-  },[])
-  let typesExpense = props.jurnal.reduce((start, cure,i, arr)=>{
-    let value = arr.reduce((prev,item)=>{
-      
-      if(item.type==="Expenses"){
-        return prev +item.sum
+  }, [])
+  let typesExpense = props.jurnal.reduce((start, cure, i, arr) => {
+    let value = arr.reduce((prev, item) => {
+
+      if (item.type === "Expenses") {
+        return prev + item.sum
       }
       return prev
-      
-    },0)
 
-    
-    
-      return{
-        type:"Расход",
-        value
-      }
-   
-  },{})
-  let type = [typesIncome,typesExpense]
-console.log(type)
-  console.log(typesIncome)
-  console.log(props.jurnal)
+    }, 0)
+    return {
+      type: "Расход",
+      value
+    }
+
+  }, {})
+  let type = [typesIncome, typesExpense]
+
 
 
 
@@ -178,7 +169,7 @@ console.log(type)
                         aria-label="more"
                         aria-controls="long-menu"
                         aria-haspopup="true"
-                        onClick={(e) =>handleClick(e, item.id)}
+                        onClick={(e) => handleClick(e, item.id)}
                       >
                         <MoreVertIcon />
                       </IconButton>
@@ -195,7 +186,7 @@ console.log(type)
                         }}
                       >
                         <MenuItem onClick={() => handleClose(item.id)}>
-                          Удалить 
+                          Удалить
                         </MenuItem>
                       </Menu>
                       {dateFormat(item.date)}
@@ -236,7 +227,7 @@ console.log(type)
                         aria-controls="long-menu"
                         aria-haspopup="true"
                         id={item.id}
-                        onClick={(e) =>handleClick(e, item.id)}
+                        onClick={(e) => handleClick(e, item.id)}
                       >
                         <MoreVertIcon />
                       </IconButton>
@@ -258,7 +249,7 @@ console.log(type)
                           onClick={() => handleClose(item.id)}
                         >
                           <span onClick={() => handleDel(item.id)}>
-                            Удалить 
+                            Удалить
                           </span>
                         </MenuItem>
                       </Menu>
@@ -297,7 +288,7 @@ console.log(type)
                         aria-controls="long-menu"
                         aria-haspopup="true"
                         id={item.id}
-                        onClick={(e) =>handleClick(e, item.id)}
+                        onClick={(e) => handleClick(e, item.id)}
                       >
                         <MoreVertIcon />
                       </IconButton>
@@ -314,7 +305,7 @@ console.log(type)
                           },
                         }}
                       >
-                        <MenuItem onClick={()=>handleClose(item.id)}>Удалить </MenuItem>
+                        <MenuItem onClick={() => handleClose(item.id)}>Удалить </MenuItem>
                       </Menu>
                       {dateFormat(item.date)}
                     </td>

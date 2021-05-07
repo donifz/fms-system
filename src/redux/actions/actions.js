@@ -95,13 +95,6 @@ export const getArchive=(archive)=>{
 
 
 
-
-
-
-
-
-
-
 export const addIncomeAction = (categoryText) => {
     return {
         type: "ADDINCOMECATEGORY",
@@ -263,15 +256,6 @@ export const selectType = (category) => {
 }
 
 
-
-
-// export const filterType = (filType) => {
-//     return {
-//         type: "SELECTTYPE",
-//         payload: filType
-//     }
-// }
-
 export const pagination = (count) => {
     return {
         type: "PAGINATION",
@@ -295,18 +279,12 @@ export const curentPage = (page) => {
 
 
 
-
-
 export const enterToApp = (token) => {
     return {
         type: "ENTERTOAPP",
         payload:token
     }
 }
-
-
-
-
 
 
 
@@ -329,32 +307,21 @@ export const addBankActionPost = (bank) => {
 
 // удаление счета
 export const deleteBankPost = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`bank-account/${id}/hard-delete/`)
         dispatch(deleteBankAction(id))
     }
-
 
 };
 
 // Архив счета
 
 export const archiveBankThunk = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`bank-account/${id}/archivate/`)
         dispatch(deleteBankAction(id))
     }
-
-
 };
-
-
-
-
-
-
 
 // Добавление категорий Дохода
 export const addIncomeActionPost = (categoryText) => {
@@ -369,7 +336,6 @@ export const addIncomeActionPost = (categoryText) => {
 
 };
 export const deleteIncomeActionPost = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`category-income/${id}`)
         dispatch(deleteIncomeAction(id))
@@ -381,7 +347,6 @@ export const deleteIncomeActionPost = (id) => {
 export const addExpensesActionPost = (categoryText) => {
     return dispatch => {
         let expenses = { "name": categoryText }
-
         API.postIncomeCategory(`category-expenses/`, expenses).then(data => {
             dispatch(addExpensesAction(data.data))
         })
@@ -389,7 +354,6 @@ export const addExpensesActionPost = (categoryText) => {
 
 };
 export const deleteExpensesActionPost = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`category-expenses/${id}`)
         dispatch(deleteExpensesAction(id))
@@ -401,7 +365,6 @@ export const deleteExpensesActionPost = (id) => {
 // Добавление Дохода
 export const addIncomeTransPost = ({ date = new Date, sum, bank_account, category_income, contractor="", specific_project="", description = "" }) => {
     return dispatch => {
-
 
         let income = {
             "date": date,
@@ -415,10 +378,9 @@ export const addIncomeTransPost = ({ date = new Date, sum, bank_account, categor
             "specific_project": specific_project,
             "send_to":null
         }
-        console.log(income)
-        // dispatch(updateBalance(income))
+
         API.postJurnalTransactions(`transaction/`, income).then(data => {
-            console.log(data.data)
+
             dispatch(updateBalance(income))
             dispatch(updateJurnal(data.data))
 
@@ -447,14 +409,10 @@ export const addExpensesTransPost = ({ date= new Date, sum, bank_account, catego
             "send_to":null
         }
 
-
-        // dispatch(updateBalance(income))
-        // dispatch(updateExpensesBalance(expenses))
         API.postJurnalTransactions(`transaction/`, expenses).then(data => {
 
             dispatch(updateExpensesBalance(expenses))
             dispatch(updateJurnal(data.data))
-            // dispatch(getJurnal())
         }
 
         )
@@ -466,7 +424,6 @@ export const addExpensesTransPost = ({ date= new Date, sum, bank_account, catego
 export const addTransferPost = ({date= new Date, sum, bank_account, contractor="", description = "",send_to}) => {
     
     return dispatch => {
-
 
         let transfer = {
             "date": date,
@@ -480,14 +437,9 @@ export const addTransferPost = ({date= new Date, sum, bank_account, contractor="
             "specific_project": null,
             "send_to":send_to
         }
-        console.log(transfer)
-
-        // dispatch(updateBalance(income))
-        // dispatch(updateExpensesBalance(expenses))
-        
+     
         API.postIncomeCategory(`transaction/`, transfer).then(data => {
             
-            console.log(data.data)
             dispatch(updateTransferBalance(data.data))
             dispatch(updateJurnal(data.data))
         }
@@ -498,14 +450,8 @@ export const addTransferPost = ({date= new Date, sum, bank_account, contractor="
 };
 
 export const transactionDelete = (transactionId) => {
-
-    // if(typeof transactionId == "object") return
-    
     return dispatch => {
         API.transactionDelete(`transaction/${transactionId}`).then(data => {
-            
-            console.log(data)
-            // dispatch(updateTransferBalance(data.data))
             dispatch(deletebyId(transactionId))
         }
 
@@ -536,7 +482,6 @@ export const addProjectActionPost = (projectName) => {
 
 };
 export const deletedProjectActionPost = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`specific-project/${id}/hard-delete/`)
         dispatch(deleteProjects(id))
@@ -550,7 +495,6 @@ export const addContractorActionPost = (contName) => {
 
     return dispatch => {
         let contractor = { "name": contName, "email": "" }
-
         API.postIncomeCategory(`contractor/`, contractor).then(data => {
             dispatch(addContractor(data.data))
         })
@@ -558,7 +502,6 @@ export const addContractorActionPost = (contName) => {
 
 };
 export const deleteContractorActionPost = (id) => {
-    console.log(id)
     return dispatch => {
         API.deleteIncomeCategory(`contractor/${id}`)
         dispatch(deleteContractor(id))
@@ -567,10 +510,8 @@ export const deleteContractorActionPost = (id) => {
 };
 
 export const paginationSelectPage = (page) => {
-    console.log(page)
     return dispatch => {
         API.getPages(page).then(data => {
-            console.log(data.data)
             dispatch(curentPage(page))
             dispatch(updatePage(data.data.results))
             
@@ -600,10 +541,7 @@ export const getBanksThunk = () => {
 
 export const filterTypeThunk = ( {dateStart="",dateEnd="",category="",bank_account="",contractor=""}) => {
     return dispatch => {
-        // let newFilter = filter.split("%")
-
         API.getFilter(dateStart,dateEnd,category,bank_account,contractor).then(data => {
-            
             dispatch(updatePage(data.data ))
             dispatch(pagination(data.data))
             
@@ -627,34 +565,26 @@ export const settingsData = () => {
         dispatch(isFetchingAction(true))
         API.getAllContractors().then(data => {
             dispatch(isFetchingAction(false))
-
             dispatch(getContragetns(data.data))
-
 
         })
         API.getIncomeCategory().then(data => {
             dispatch(isFetchingAction(false))
-
-
             dispatch(getIncomeCategory(data.data))
-
 
         })
         API.getExpensesCategory().then(data => {
             dispatch(isFetchingAction(false))
-
             dispatch(getExpensesCategory(data.data))
 
         })
         API.getExpensesCategory().then(data => {
             dispatch(isFetchingAction(false))
-
             dispatch(getExpensesCategory(data.data))
 
         })
         API.getSpecificProject().then(data => {
             dispatch(isFetchingAction(false))
-
             dispatch(getProjects(data.data))
 
         })
@@ -666,10 +596,7 @@ export const settingsData = () => {
         })
 
         API.getTotal().then(data => {
-
-
             dispatch(getTotalAction(data.data))
-
         })
         API.getMe().then(data=>{
             dispatch(getMe(data.data))
@@ -712,10 +639,7 @@ export const archiveData = () => {
         
         return dispatch => {
             API.projectToArhive(projectId)
-                
-                
                 dispatch(deleteProjects(projectId))
-                
             
         }}
         export const unArchiveProject = (projectId) => {
@@ -725,7 +649,6 @@ export const archiveData = () => {
                     
                     
                     dispatch(updateArchiveProjects(projectId))
-                    // dispatch(addBankAction(bank))
                 
             }}
             export const updateArchiveProjects = (id) => {
@@ -765,7 +688,6 @@ export const login = ({email,password})=>{
       }
     return dispatch=>{
         API.login(`token/login/`,valid).then(token=>{
-            console.log(token)
             localStorage.setItem('token', JSON.stringify(token.data.auth_token));
              history.push('/')
             window.location.reload(true) 
@@ -823,9 +745,7 @@ export const addUser = ({username,password,first_name,last_name,email}) => {
     }
     
     return dispatch => {
-        console.log(newUser)
        API.addUser(`/users/`,newUser).then(data=>{
-           console.log(data.data)
            dispatch(updateUsers(data.data))
        })
  
@@ -841,10 +761,8 @@ export const addUser = ({username,password,first_name,last_name,email}) => {
 export const deleteUser = (id) => {
     
     
-    return dispatch => {
-        
+    return dispatch => {      
        API.deleteUser(id).then(data=>{
-           console.log(data.data)
            dispatch(deleteUserId(data.data))
        })
  
@@ -863,7 +781,6 @@ export const deleteUser = (id) => {
 export const chartsData = () => {
     return dispatch => {
         API.getJurnalTransactions().then(data=>{
-            console.log(data.data)
             dispatch(getChartJurnal(data.data.results))
             dispatch(getTypeCharts(data.data.results))
             dispatch(getIcomeCategoryChart(data.data.results))
@@ -961,20 +878,6 @@ export const chartPeriod = ({start_date,end_date}) => {
             dispatch(getExpensesCategoryChart(data.data))
             dispatch(getProjectsChart(data.data))
         })
-        // API.getIncomeCategory().then(data=>{
-        //     dispatch(categoryIncomeUniq(data.data))
-            
-            
-
-        // })
-        // API.getExpensesCategory().then(data=>{
-        //     dispatch(categoryExpensesUniq(data.data))
-        // })
-        // API.getSpecificProject().then(data=>{
-        //     dispatch(projectUniq(data.data))
-            
-        // })
-        
  
     }}
 

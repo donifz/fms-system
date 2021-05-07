@@ -13,9 +13,9 @@ const ExpensesModal = (props) => {
         props.addExpensesTransPost(formExpData)
         props.modalExpenses()
     }
-    console.log(props.expenses)
+
     let date = new Date
-    let newDate = (`${date.getFullYear()}-${date.getMonth()+1}-${(date.getUTCDate()).toString().length==1?"0"+date.getDate():date.getDate()}`).toString()
+    let newDate = (`${date.getFullYear()}-${date.getMonth() + 1}-${(date.getUTCDate()).toString().length == 1 ? "0" + date.getDate() : date.getDate()}`).toString()
 
     return (
         <div className="expenses">
@@ -42,13 +42,13 @@ const ExpensesModal = (props) => {
                             })}
 
                         </select>
-                        <select  onChange={handleExpInput} name="contractor">
+                        <select onChange={handleExpInput} name="contractor">
                             <option selected disabled value={null}>Контрагент</option>
                             {props.contragents && props.contragents.map(item => {
                                 return <option key={item.id} value={item.id}>{item.name}</option>
                             })}
                         </select>
-                        <select  onChange={handleExpInput} name="specific_project">
+                        <select onChange={handleExpInput} name="specific_project">
                             <option selected disabled value={null}>Проекты</option>
                             {props.projects && props.projects.map(item => {
                                 return <option key={item.id} value={item.id}>{item.name}</option>

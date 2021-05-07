@@ -1,7 +1,5 @@
 import React from 'react';
 import "./charts.css"
-
-
 import { Pie } from '@ant-design/charts';
 
 
@@ -14,7 +12,7 @@ const Charts = (props) => {
     let [period, setPeriod]=React.useState({})
 
  
-console.log(props)
+
    
       var total = {
         appendPadding: 10,

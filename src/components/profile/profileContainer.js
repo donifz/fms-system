@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import Profile from './profile'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions/actions'
 
 export class ProfileContainer extends Component {
+    constructor(props){
+        super(props)
+
+    }
   
     
 componentDidMount(){
@@ -13,10 +16,11 @@ componentDidMount(){
 }
 
     render() {
+        console.log(this.props)
         return (
             <>
             
-            <Profile users={this.props.users} modalCreateUser={this.props.modalCreateUser} getMe={this.props.getMe} deleteUser={this.props.actions.deleteUser}/>
+            <Profile users={this.props.users} modalCreateUser={this.props.modalCreateUser} getMe={this.props.getMe} deleteUser={this.props&&this.props.actions&&this.props.actions.deleteUser}/>
         </>
         )
     }

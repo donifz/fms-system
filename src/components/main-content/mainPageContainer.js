@@ -1,14 +1,10 @@
 import React, { Component } from "react"
-
 import { connect } from "react-redux"
 import { bindActionCreators } from 'redux'
 import * as actions from '../../redux/actions/actions'
 import Filter from "./filters"
 import MainPage from "./main-page"
-import {Route} from "react-router-dom"
-import  TableExpenses  from "./tableExpenses"
-import TableIncome from "./tableIncome"
-import TableTransfer from "./tableTransfer"
+
 
 
 
@@ -25,7 +21,7 @@ class MainPageContainer extends Component {
 
     render() {
 
-        console.log(this.props)
+       
 
         return (
             <>

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Sidebar from '../Sidebar/sidebar';
 import "./header.css"
 import "../Sidebar/sidebar.css"
-import adminPhoto from "../assets/Sanira.jpg"
 import { Link } from "react-router-dom"
 import settingIcon from "../assets/icons/settings.png"
 import Avatar from '@material-ui/core/Avatar';
@@ -20,7 +18,7 @@ const Header = (props) => {
         header += ' forHeader'
     }
 
-    console.log(props.bankList)
+
     return (<>
         <header className={header}>
             <div className="header-wrapper">

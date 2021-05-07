@@ -1,9 +1,10 @@
+import { history } from "../../helpers/_history";
 let token = window.localStorage.getItem('token')
 const initialState = {
     email:"",
     password:"",
     token:{},
-    entry:!token,
+    entry:!!token,
     
 
   }
@@ -14,13 +15,11 @@ const initialState = {
   function auth(state = initialState, action) {
     switch (action.type) {
       case 'ENTERTOAPP':
-        
-      
-      return {...state, entry: false}
+      return {...state, entry: true}
 
       case 'LOGOUT':
         window.localStorage.removeItem("token")
-        return {...state, entry: token}
+        return {...state, entry: false}
         
 
       default:
