@@ -1,18 +1,18 @@
 import axios from "axios";
 
 
-let head =window.localStorage.getItem('token')? {Authorization:`Token ${JSON.parse(localStorage.getItem("token"))}`} :""
+let head = window.localStorage.getItem('token')? {Authorization:`Token ${JSON.parse(localStorage.getItem("token"))}`} :""
 
-
+console.log(head)
 
  const  auth = axios.create({
     baseURL: "https://neo-finance.herokuapp.com/auth/",
-    headers: head
+    headers: head||{}
     
 });
 const fetchData = axios.create({
     baseURL: "https://neo-finance.herokuapp.com/api/",
-    headers:  head
+    headers:  head||{}
         
     
     

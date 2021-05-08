@@ -1,10 +1,10 @@
 import { history } from "../../helpers/_history";
-let token = window.localStorage.getItem('token')
+let token = window.localStorage.getItem('token')? true:false
 const initialState = {
     email:"",
     password:"",
     token:{},
-    entry:!!token,
+    entry:token,
     
 
   }

@@ -12,7 +12,7 @@ import {history} from "./helpers/_history"
 let store = createStore(combined, applyMiddleware(thunk))
 window.store = store
 ReactDOM.render(
-  <BrowserRouter history={history}>
+  <BrowserRouter >
     <Provider store={store}>
       <App />
     </Provider>

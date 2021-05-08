@@ -686,14 +686,20 @@ export const login = ({email,password})=>{
         "username": email,
         "password": password
       }
-    return dispatch=>{
-        API.login(`token/login/`,valid).then(token=>{
-            localStorage.setItem('token', JSON.stringify(token.data.auth_token));
-             history.push('/')
-            window.location.reload(true) 
+    return async dispatch=>{
+        try{
+            const token = await API.login(`token/login/`,valid)
+            console.log(token)
+            localStorage.setItem('token', JSON.stringify(token&&token.data&&token.data.auth_token));
+            history.push('/')
             dispatch(enterToApp(token.data.auth_token))
-        })
-        .catch(console.log("Неправильный пароль"))
+            window.location.reload()
+        }
+        catch(e){
+            console.log(e)
+        }
+         
+        
     }
 }
 

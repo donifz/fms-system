@@ -25,7 +25,6 @@ const Login = (props) => {
 
     }
 
-    console.log(allData)
 
 
 
