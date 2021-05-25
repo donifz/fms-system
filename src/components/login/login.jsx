@@ -1,13 +1,15 @@
 import React from 'react'
 import "./login.css"
 import brand from "../assets/favicon3.png";
+import loader from "../loader/assets/loader.svg";
+import Loader from '../loader/loader';
 
 const Login = (props) => {
 
 
     let [allData, setAllData] = React.useState()
 
-
+    let [loaderState, setLoaderState] = React.useState(false)
     const emailInput = (e) => {
         setAllData({ ...allData, [e.target.name]: e.target.value })
         console.log(e.target.value)
@@ -19,8 +21,12 @@ const Login = (props) => {
 
     }
     const submitHandler = (e) => {
+
         e.preventDefault()
+
+        setLoaderState(true)
         props.loginActionThunk(allData)
+
 
 
     }
@@ -36,6 +42,7 @@ const Login = (props) => {
                 </div>
 
                 <h1 >NeoFinance</h1>
+                {loaderState && <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}><img src={loader} alt="" /></div>}
                 <input type="text" id="email" name="email" autoComplete="off" required onChange={emailInput} />
                 <label htmlFor="email" className="labelEmail">
                     <span className="contentEmail">Логин: admin</span></label>
@@ -43,7 +50,7 @@ const Login = (props) => {
                 <label htmlFor="pass" className="labelPass">
                     <span className="contentPass">Пароль: admin</span></label>
                 <button className="btn">
-                    <span>Войти</span></button>
+                    <span >Войти</span></button>
             </form>
         </div>
     )
